@@ -48,7 +48,7 @@ variable "root_volume_size" {
 }
 
 variable "user_data" {
-  description = "Base64-encoded user data script to run on launch"
+  description = "User data script to run on instance launch (plain text; the aws_instance resource handles base64 encoding)"
   type        = string
   default     = null
 }

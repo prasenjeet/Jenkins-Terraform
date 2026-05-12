@@ -97,12 +97,11 @@ module "ec2" {
     }
   ]
 
-  user_data = base64encode(<<-EOF
+  user_data = <<-EOF
     #!/bin/bash
     yum update -y
     yum install -y httpd
     systemctl enable --now httpd
     echo "<h1>Hello from ${var.project} (${var.environment})</h1>" > /var/www/html/index.html
   EOF
-  )
 }
